@@ -16,10 +16,11 @@ best_model = load_model('best_model_basic.h5')
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
 
-#Uncomment the line below to test the upgraded model
-#X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+# Uncomment the line below to test the upgraded model
+# X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
 loss, accuracy = best_model.evaluate(X_test, y_test)
 
